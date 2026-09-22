@@ -1,0 +1,40 @@
+/******************
+* Автор: Ли Д. С. *
+* Вариант: 3      *
+******************/
+
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+  double alfa, startSpeed, radianAlfa, doubleRadianAlfa, timeFly,
+      maxHeight, maxRange, startCurvatureRadius, apexCurvatureRadius;
+  const double gravity = 9.81;
+  const double pi = 3.14;
+
+  cout << "alfa = ";
+  cin >> alfa;
+  cout << "startspeed = ";
+  cin >> startSpeed;
+
+  radianAlfa = alfa * pi / 180.0;
+  doubleRadianAlfa = 2 * radianAlfa;
+
+  timeFly = (2 * startSpeed * sin(radianAlfa)) / gravity;
+  maxHeight = pow(startSpeed, 2) * pow(sin(radianAlfa), 2) / (2 * gravity);
+  maxRange = pow(startSpeed, 2) * sin(doubleRadianAlfa) / gravity;
+  startCurvatureRadius = pow(startSpeed, 2) / (gravity * cos(radianAlfa));
+  apexCurvatureRadius = pow(startSpeed, 2) * pow(cos(radianAlfa), 2) / gravity;
+
+  cout << fixed << setprecision(6) 
+      << "timeFly = " << timeFly << endl
+      << "maxHeight = " << maxHeight << endl
+      << "maxRange = " << maxRange << endl
+      << "startCurvatureRadius = " << startCurvatureRadius << endl
+      << "apexCurvatureRadius = " << apexCurvatureRadius << endl;
+
+  return 0;
+}
