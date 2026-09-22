@@ -24,20 +24,17 @@ int main() {
   doubleRadianAlfa = 2 * radianAlfa;
 
   timeFly = (2 * startSpeed * sin(radianAlfa)) / gravity;
-  maxHeight = pow(startSpeed, 2) * pow(sin(radianAlfa), 2)
-/ (2 * gravity);
-  maxRange = pow(startSpeed, 2) * sin(doubleRadianAlfa)
-/ gravity;
+  maxHeight = pow(startSpeed, 2) * pow(sin(radianAlfa), 2) / (2 * gravity);
+  maxRange = pow(startSpeed, 2) * sin(doubleRadianAlfa) / gravity;
   startCurvatureRadius = pow(startSpeed, 2) / (gravity * cos(radianAlfa));
-  apexCurvatureRadius = pow(startSpeed, 2) * pow(cos(radianAlfa), 2)
-/ gravity;
+  apexCurvatureRadius = pow(startSpeed, 2) * pow(cos(radianAlfa), 2) / gravity;
 
-  cout << fixed << setprecision(6);
-  cout << "timeFly = " << timeFly << endl;
-  cout << "maxHeight = " << maxHeight << endl;
-  cout << "maxRange = " << maxRange << endl;
-  cout << "startCurvatureRadius = " << startCurvatureRadius << endl;
-  cout << "apexCurvatureRadius = " << apexCurvatureRadius << endl;
+  cout << fixed << setprecision(6) 
+      << "timeFly = " << timeFly << endl
+      << "maxHeight = " << maxHeight << endl
+      << "maxRange = " << maxRange << endl
+      << "startCurvatureRadius = " << startCurvatureRadius << endl
+      << "apexCurvatureRadius = " << apexCurvatureRadius << endl;
 
   return 0;
 }
