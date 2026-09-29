@@ -1,7 +1,8 @@
-/******************
-* Автор: Ли Д. С. *
-* Вариант: 3      *
-******************/
+/******************************
+* Автор: Ли Даниил            *
+* Задание: Линейные алгоритмы *
+* Вариант: 3                  *
+******************************/
 
 #include <iostream>
 #include <cmath>
@@ -11,30 +12,31 @@ using namespace std;
 
 int main() {
   double alfa, startSpeed, radianAlfa, doubleRadianAlfa, timeFly,
-      maxHeight, maxRange, startCurvatureRadius, apexCurvatureRadius;
-  const double gravity = 9.81;
-  const double pi = 3.14;
+         maxHeight, maxRange, startCurvatureRadius, apexCurvatureRadius;
+  const double gravity = 9.81;          // Коэфицент свободного падения
+  const double pi = 3.14;               // Число Пи
 
-  cout << "alfa = ";
+  cout << "Alfa = ";
   cin >> alfa;
-  cout << "startspeed = ";
+
+  cout << "Start speed = ";
   cin >> startSpeed;
 
-  radianAlfa = alfa * pi / 180.0;
-  doubleRadianAlfa = 2 * radianAlfa;
+  radianAlfa = alfa * pi / 180.0;       // Из угла получем радианы для использования cos()
+  doubleRadianAlfa = 2.0 * radianAlfa;  // Двойной угол = двойные радианы 
 
-  timeFly = (2 * startSpeed * sin(radianAlfa)) / gravity;
-  maxHeight = pow(startSpeed, 2) * pow(sin(radianAlfa), 2) / (2 * gravity);
-  maxRange = pow(startSpeed, 2) * sin(doubleRadianAlfa) / gravity;
-  startCurvatureRadius = pow(startSpeed, 2) / (gravity * cos(radianAlfa));
-  apexCurvatureRadius = pow(startSpeed, 2) * pow(cos(radianAlfa), 2) / gravity;
+  timeFly = (2.0 * startSpeed * sin(radianAlfa)) / gravity;
+  maxHeight = pow(startSpeed, 2.0) * pow(sin(radianAlfa), 2.0) / (2.0 * gravity);
+  maxRange = pow(startSpeed, 2.0) * sin(doubleRadianAlfa) / gravity;
+  startCurvatureRadius = pow(startSpeed, 2.0) / (gravity * cos(radianAlfa));
+  apexCurvatureRadius = pow(startSpeed, 2.0) * pow(cos(radianAlfa), 2.0) / gravity;
 
   cout << fixed << setprecision(6) 
-      << "timeFly = " << timeFly << endl
-      << "maxHeight = " << maxHeight << endl
-      << "maxRange = " << maxRange << endl
-      << "startCurvatureRadius = " << startCurvatureRadius << endl
-      << "apexCurvatureRadius = " << apexCurvatureRadius << endl;
+       << "Time of flying = " << timeFly << endl
+       << "Max height = " << maxHeight << endl
+       << "Max range = " << maxRange << endl
+       << "Radius of start curvature = " << startCurvatureRadius << endl
+       << "Radius of apex curvature = " << apexCurvatureRadius << endl;
 
   return 0;
 }
