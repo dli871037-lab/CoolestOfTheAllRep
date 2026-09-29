@@ -31,7 +31,7 @@ int main() {
   startCurvatureRadius = pow(startSpeed, 2.0) / (gravity * cos(radianAlfa));
   apexCurvatureRadius = pow(startSpeed, 2.0) * pow(cos(radianAlfa), 2.0) / gravity;
 
-  cout << fixed << setprecision(6) 
+  cout << fixed << setprecision(6)       // 6 чисел после запятой
        << "Time of flying = " << timeFly << endl
        << "Max height = " << maxHeight << endl
        << "Max range = " << maxRange << endl
